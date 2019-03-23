@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  {% load staticfiles %}
+  {% load static %}
+  <meta name="theme-color" content="#4553ff" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="VengixLabs is a creative organisation which works on building products">
+  <meta name="author" content="adarshreddy Adelli">
+  <title>vengixLabs</title>
+  <!-- Favicon -->
+  <link href="/static/assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="./assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static '/assets/vendor/nucleo/css/nucleo.css' %}">
+  <link href="/static/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <!-- Argon CSS -->
+  <link  href="https://gitcdn.link/repo/Adarshreddyash/vensite/master/static/assets/css/argon.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'App/assets/css/argon.css' %}">
+  <!-- Docs CSS -->
+  <link type="text/css" href="./assets/css/docs.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+</head>
+
+<body>
+  <header class="header-global">
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
+      <div class="container">
+        <a class="navbar-brand mr-lg-5" href="./index.html">
+          <img src="https://raw.githubusercontent.com/Adarshreddyash/vensite/master/static/asset/img/brand/white.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="./index.html">
+                  <img src="https://raw.githubusercontent.com/Adarshreddyash/vensite/master/static/assets/img/brand/blue.png">
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+            <ul class="navbar-nav ml-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Discover vengiX
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://glammingspace.blogspot.com">Blog</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="nav-inner-primary_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact us</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="nav-inner-primary_dropdown_1">
+                  <a class="dropdown-item" href="#">+919160225766</a>
+                  <a class="dropdown-item" href="#">vengixlabs@gmail.com</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">contact form</a>
+                </div>
+              </li>
+            </ul>
+                  </a>
+                </li>
+              </ul>
+              <ul class="navbar-nav nav-item align-items-lg-center d-left ml-lg-auto"></ul>
+              {% if request.user.is_authenticated %}
+
+              <ul class="navbar-nav align-items-center  d-md-flex">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <div class="media align-items-center">
+                        <span class="avatar avatar-sm rounded-circle">
+                          <img alt="Image placeholder" src="https://avatars3.githubusercontent.com/u/28985009?s=460&v=4">
+                        </span>
+                        <div class="media-body ml-2  d-lg-block">
+                          <span class="mb-0 text-sm  font-weight-bold text-success">{{request.user.username}}</span>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+                      <div class=" dropdown-header noti-title">
+                        <h6 class="text-overflow m-0">Welcome!</h6>
+                      </div>
+                      <a href="./examples/profile.html" class="dropdown-item">
+                        <i class="ni ni-single-02"></i>
+                        <span>My profile</span>
+                      </a>
+                      <a href="./examples/profile.html" class="dropdown-item">
+                        <i class="ni ni-settings-gear-65"></i>
+                        <span>Settings</span>
+                      </a>
+                      <a href="./examples/profile.html" class="dropdown-item">
+                        <i class="ni ni-calendar-grid-58"></i>
+                        <span>Activity</span>
+                      </a>
+                      <a href="./examples/profile.html" class="dropdown-item">
+                        <i class="ni ni-support-16"></i>
+                        <span>Support</span>
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a href="/accounts/logout" class="dropdown-item">
+                        <i class="ni ni-user-run"></i>
+                        <span>Logout</span>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+               {% else %}
+                <li>
+                    <a href="/accounts/login/" target="_blank" class="text-white btn btn-default">LOGIN</a>
+                    </li>
+                    <li class="nav-item d-lg-block ml-lg-4">
+                      <a href="/accounts/signup" target="_blank" class="btn btn-neutral btn-icon">
+                        <span class="btn-inner--icon">
+                          <i class="fa fa-cloud-download mr-2"></i>
+                        </span>
+                        <span class="nav-link-inner--text">Sign up</span>
+                        {% endif %}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="position-relative">
+      <!-- Hero for FREE version -->
+      <section class="section section-lg section-hero section-shaped">
+        <!-- Background circles -->
+		<div class="shape shape-style-2 shape-primary">
+        </div>
+        <div class="container shape-container d-flex align-items-center py-lg">
+          <div class="col px-0">
+            <div class="row align-items-center justify-content-center">
+              <div class="col-lg-6 text-center">
+                <img src="/static/assets/img/brand/white.png" style="width: 200px;" class="img-fluid">
+                <p class="lead text-white"> 
+                 An organisation for building products for future</p>
+                  <div class="btn-wrapper mt-5">
+                  <a href="/vengix" class="btn btn-lg btn-info  btn-icon mb-3 mb-sm-0">
+                    <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
+                    <span class="btn-inner--text text-white">Talk to vengix</span>
+                  </a>
+                </div>
+                <div class="mt-5">
+                  <small class="text-white font-weight-bold mb-0 mr-2">*proudly coded by Team vengix</small>
+                  <img src="/static/assets/img/brand/creativetim-whte-slim.png" style="height: 28px;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SVG separator -->
+      </section>
+    </div>
+			<section class="section section-lg">
+			  <section class="section">
+				<img src="/static/assets/img/path4.png" class="path">
+				<div class="container">
+				  <div class="row row-grid justify-content-between">
+					<div class="col-md-5 mt-lg-5">
+					  <div class="row">
+						<div class="col-lg-6 col-sm-12 px-2 py-2">
+						  <div class="card card-stats card-lift--hover shadow border-0 ">
+							<div class="card-body">
+							  <div class="row">
+								<div class="col-5 col-md-4">
+								  <div>
+									<div class="icon icon-shape icon-big bg-gradient-primary text-center text-white">
+									  <i class="fab fa-html5 fa-7x animated rubberBand infinite"></i>
+									</div>
+								  </div>
+								  <div class="icon-big icon icon-shape text-center icon-warning">
+									<i class="tim-icons icon-laptop text-warning"></i>
+								  </div>
+								</div>
+								<div class="col-7 col-md-8">
+								  <div class="numbers">
+									<p class="card-title text-warning">Web
+									<p>
+									<p class="card-category">
+									  <span class="badge badge-pill badge-primary text-uppercase">Bootstrap</span>
+									  <span class="badge badge-pill badge-info">Django</span>
+									  <span class="badge badge-pill badge-success">Angular</span>
+									  <span class="badge badge-pill badge-danger">Firebase</span>
+									</p>
+								  </div>
+								</div>
+							  </div>
+							</div>
+						  </div>
+						</div>
+						<div class="col-lg-6 col-sm-12 px-2 py-2">
+						  <div class="card card card-lift--hover shadow border-0 card-stats upper bg-gg">
+							<div class="card-body">
+							  <div class="row">
+								<div class="col-5 col-md-4">
+								  <div>
+									<div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+									  <i class="fas fa-robot animated wobble infinite"></i>
+									</div>
+								  </div>
+								  <div class="icon-big text-center icon-warning">
+									<i class="tim-icons icon-coins text-white"></i>
+								  </div>
+								</div>
+								<div class="col-7 col-md-8">
+								  <div class="numbers">
+									<p class="card-title">AI / ML
+									<p>
+									<p class="card-category">
+									  <span class="badge badge-pill badge-primary">Tensorflow</span>
+									  <span class="badge badge-pill badge-info">chatbot</span>
+									  <span class="badge badge-pill badge-success">Assistants</span>
+									  <span class="badge badge-pill badge-danger">IOT</span>
+									</p>
+								  </div>
+								</div>
+							  </div>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					  <div class="row">
+						<div class="col-lg-6 col-sm-12 px-2 py-2">
+						  <div class="card card card-lift--hover shadow border-0 card-stats ">
+							<div class="card-body">
+							  <div class="row">
+								<div class="col-5 col-md-4">
+								  <div>
+									<div class="icon icon-shape bg-gradient-info rounded-circle text-white">
+									  <i class="fab fa-android fa-4x animated bounce infinite"></i>
+									</div>
+								  </div>
+								  <div class="icon-big text-center icon-warning">
+									<i class="tim-icons icon-mobile text-success"></i>
+								  </div>
+								</div>
+								<div class="col-7 col-md-8">
+								  <div class="numbers">
+									<p class="card-title text-success">Android
+									<p>
+									<p class="card-category">
+									  <span class="badge badge-pill badge-primary">Kivy</span>
+									  <span class="badge badge-pill badge-info">material design</span>
+									  <span class="badge badge-pill badge-success">Android studio</span>
+									  <span class="badge badge-pill badge-danger">Firebase</span>
+									</p>
+								  </div>
+								</div>
+							  </div>
+							</div>
+						  </div>
+						</div>
+						<div class="col-lg-6 col-sm-12 px-2 py-2">
+						  <div class="card card card-lift--hover shadow border-0 card-stats ">
+							<div class="card-body">
+							  <div class="row">
+								<div class="col-5 col-md-4">
+								  <div>
+									<div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+									  <i class="fab fa-python animated tada infinite"></i>
+									</div> 
+								  </div>
+								  <div class="icon-big text-center icon-warning">
+									<i class="tim-icons icon-credit-card text-info"></i>
+								  </div>
+								</div>
+								<div class="col-7 col-md-8">
+								  <div class="numbers">
+									<p class="card-title text-info">Python
+									<p>
+									<p class="card-category">
+									  <span class="badge badge-pill badge-primary">requests</span>
+									  <span class="badge badge-pill badge-info">flask</span>
+									  <span class="badge badge-pill badge-success">opencv</span>
+									  <span class="badge badge-pill badge-danger">selenium</span>
+									</p>
+								  </div>
+								</div>
+							  </div>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					</div>
+					<div class="col-md-6">
+					  <div class="pl-md-5">
+						<h3 class="empty">
+						</h3>
+						<h1 class="empty">
+						</h1>
+						<h1 class="display-5 text-warning">Our
+						  <br/>Technologies</h1>
+						<p>Get the latest power to drive you with wide range of services we offer with that emerging technologies..</p>
+						<br/>
+						<p>When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray.</p>
+						<br/>
+						<a href="#" class="font-weight-bold text-info mt-5">Show all <i class="tim-icons icon-minimal-right text-info"></i></a>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </section>
+      
+    <div class="container bg-white">
+      <div class="row row-grid align-items- my-md">
+        <div class="col-lg-4 col-xs-6 col-sm-3">
+	<div class="dropdown">
+       <a href="#" class="btn btn-default dropdown-toggle " data-toggle="dropdown" id="navbarDropdownMenuLink2">
+       <img src="../../assets/img/icons/flags/US.png" />links
+       </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+      <li>
+          <a class="dropdown-item" href="#">
+            <img src="../../assets/img/icons/flags/DE.png" /> Deutsch
+          </a>
+      </li>
+      <li>
+          <a class="dropdown-item" href="#">
+            <img src="../../assets/img/icons/flags/GB.png" /> English(UK)
+          </a>
+      </li>
+      <li>
+          <a class="dropdown-item" href="#">
+            <img src="../../assets/img/icons/flags/FR.png" /> Français
+          </a>
+      </li>
+  </ul>
+</div>
+          <h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
+          <h4 class="mb-0 font-weight-light"></h4>
+        </div>
+        <div class="col-lg-6 text-lg-center btn-wrapper">
+          <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" data-toggle="tooltip" data-original-title="Follow us">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip" data-original-title="Like us">
+            <i class="fa fa-facebook-square"></i>
+          </a>
+          <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-dribbble btn-lg btn-round" data-toggle="tooltip" data-original-title="Follow us">
+            <i class="fa fa-dribbble"></i>
+          </a>
+          <a target="_blank" href="#" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" data-toggle="tooltip" data-original-title="Star on Github">
+            <i class="fa fa-github"></i>
+          </a>
+        </div>
+      </div>
+      <hr>
+      <div class="row align-items-center justify-content">
+        <div class="col-md-6">
+          <div class="copyright">
+            &copy; 2018
+            <a href="#" target="_blank">Team Vengix</a>.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ul class="nav nav-footer justify-content-end">
+            <li class="nav-item">
+              <a href="https://glammingspace.blogspot.com" class="nav-link" target="_blank">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" target="_blank">Media kit</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" target="_blank">Report</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" target="_blank">MIT License</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Core -->
+  <script src="/App/static/App/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Adarshreddyash/vensite/static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/App/static/App/assets/vendor/popper/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Adarshreddyash/vensite/static/assets/vendor/popper/popper.min.js"></script>
+  <script src="/App/static/App/assets/vendor/bootstrap/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Adarshreddyash/vensite/static/assets/vendor/bootstrap/bootstrap.min.js"></script>
+  <script src="/App/static/App/assets/vendor/headroom/headroom.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Adarshreddyash/vensite/static/assets/vendor/headroom/headroom.js"></script>
+  <!-- Optional JS -->
+  <script src="/static/assets/vendor/onscreen/onscreen.min.js"></script>
+  <script src="/static/App/assets/vendor/nouislider/js/nouislider.min.js"></script>
+  <script src="/App/static/App/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+  <!-- Argon JS -->
+  <script src="/App/assets/js/argon.js?v=1.0.1"></script>
+  <script src="{% static 'js/argon.js'%}"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Adarshreddyash/vensite/static/assets/js/argon.js"></script>
+  
+</body>
+
+</html>
