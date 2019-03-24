@@ -12,3 +12,9 @@ urlpatterns = [
     url('auth/', include('social_django.urls', namespace='social')),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
 ]
+import settings
+urlpatterns += patterns('',
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': settings.STATIC_ROOT,
+    }),
+)
