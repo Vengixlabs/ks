@@ -138,6 +138,7 @@ SOCIAL_AUTH_GITHUB_SECRET = '88776ace96a819cd884ace6eb83edb77d9e4bbc1'
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_URL = '/my_project/static/'
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
