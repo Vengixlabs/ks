@@ -10,11 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import dj-database-url # add this to the top of your file
-
-db_from_env = dj_database_url.config()
- DATABASES[‘default’].update(db_from_env)
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -97,7 +92,10 @@ DATABASES = {
     }
 }
 
+import dj-database-url # add this to the top of your file
 
+db_from_env = dj_database_url.config()
+DATABASES[‘default’].update(db_from_env)
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
