@@ -1,4 +1,4 @@
-import dj-database-url
+
 """
 Django settings for my_project project.
 
