@@ -143,6 +143,8 @@ USE_TZ = True
 SOCIAL_AUTH_GITHUB_KEY = '8a9b72690bfe0874db9f'
 SOCIAL_AUTH_GITHUB_SECRET = '88776ace96a819cd884ace6eb83edb77d9e4bbc1'
 
+SOCIAL_AUTH_FACEBOOK_KEY = '2124134904333672'   
+SOCIAL_AUTH_FACEBOOK_SECRET = 'd04899bcf5849e04045f72e824159d18'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
